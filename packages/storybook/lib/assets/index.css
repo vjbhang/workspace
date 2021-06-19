@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Roboto";
-  src: url("../src/stories/assets/Roboto/Roboto-Regular.ttf");
+  src: url("./Roboto/Roboto-Regular.ttf");
 }
 
 .Roboto {

@@ -9,7 +9,7 @@ var _react = _interopRequireDefault(require("react"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
-require("../../../index.css");
+require("../../assets/index.css");
 
 var _templateObject, _templateObject2;
 
