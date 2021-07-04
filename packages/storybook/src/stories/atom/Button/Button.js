@@ -43,7 +43,12 @@ export const Button = ({
   }
 
   return (
-    <Container className="Roboto" backgroundColor={backgroundColor} {...props} style={containerStyle}>
+    <Container
+      className="Roboto"
+      backgroundColor={backgroundColor}
+      {...props}
+      style={containerStyle}
+    >
       {arrangeIcon(left, right, iconOnly)}
     </Container>
   );
