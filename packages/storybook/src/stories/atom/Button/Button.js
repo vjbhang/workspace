@@ -13,7 +13,7 @@ export const Button = ({
   labelStyle,
   ...props
 }) => {
-  function arrangeIcon(left, right, iconOnly) {
+  function arrangeIcon(left, right, iconOnly, icon) {
     if (iconOnly) {
       return <Label>{icon}</Label>;
     } else if (left && right) {
@@ -49,7 +49,7 @@ export const Button = ({
       {...props}
       style={containerStyle}
     >
-      {arrangeIcon(left, right, iconOnly)}
+      {arrangeIcon(left, right, iconOnly, icon)}
     </Container>
   );
 };
@@ -64,6 +64,7 @@ const Container = styled.button`
   font-size: 12px;
   :hover {
     cursor: pointer;
+    filter: brightness(92%);
   }
   :active {
     background-color: #90deff;

@@ -8,6 +8,9 @@ Component library using storybook in react designed with styled-components.
 2. `npm version [major / minor / patch]` _(optional)_
 3. `npm publish`
 
+**Run Storybook**  
+`npm run storybook`
+
 # Components
 
 ## Button
