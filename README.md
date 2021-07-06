@@ -5,3 +5,4 @@ Workspace for all the things I commonly use for web/mobile development along wit
 - Monorepo managed with Lerna.js
 - Projects
   - storybook
+  - homepage-template
