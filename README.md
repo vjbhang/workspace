@@ -1,8 +1,7 @@
 # Vincent's Workspace
 
-Workspace for all the things I commonly use for web/mobile development along with other projects for reference.
+Monorepo workspace (`lerna.js`) for all the things I commonly use for web/mobile development along with other projects for reference.
 
-- Monorepo managed with Lerna.js
-- Projects
-  - storybook
-  - homepage-template
+- Packages
+  - storybook: A `react` component library 🚧
+  - homepage-template: A `react` homepage template 🚧
