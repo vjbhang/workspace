@@ -3,11 +3,11 @@
 Object.defineProperty(exports, "__esModule", {
   value: true,
 });
-Object.defineProperty(exports, "Box", {
+Object.defineProperty(exports, "Header", {
   enumerable: true,
   get: function get() {
-    return _Box.Box;
+    return _Header.Header;
   },
 });
 
-var _Box = require("./Box");
+var _Header = require("./Header");

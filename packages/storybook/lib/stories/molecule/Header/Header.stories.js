@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true,
 });
-exports.LoggedOut = exports.LoggedIn = exports.default = void 0;
+exports.Default = exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -14,8 +14,15 @@ function _interopRequireDefault(obj) {
 }
 
 var _default = {
-  title: "Example/Header",
+  title: "Molecule/Header",
   component: _Header.Header,
+  parameters: {
+    docs: {
+      description: {
+        component: "A header",
+      },
+    },
+  },
 };
 exports.default = _default;
 
@@ -23,11 +30,5 @@ var Template = function Template(args) {
   return /*#__PURE__*/ _react.default.createElement(_Header.Header, args);
 };
 
-var LoggedIn = Template.bind({});
-exports.LoggedIn = LoggedIn;
-LoggedIn.args = {
-  user: {},
-};
-var LoggedOut = Template.bind({});
-exports.LoggedOut = LoggedOut;
-LoggedOut.args = {};
+var Default = Template.bind({});
+exports.Default = Default;
