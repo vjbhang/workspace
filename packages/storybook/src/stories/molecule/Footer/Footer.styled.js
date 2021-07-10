@@ -3,13 +3,13 @@ import styled from "styled-components";
 const innerPaddingHorizontal = "5%";
 const background = "white";
 
-const Row = styled.div`
+export const Row = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
 `;
 
-const Column = styled.div`
+export const Column = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,14 +18,13 @@ const Column = styled.div`
 export const Container = styled(Column)`
   height: 423px;
   width: 100%;
-  border: 1px solid #d3d3d3;
 `;
 
 export const LinksContainer = styled.div`
   height: 308px;
   width: 100%;
   background-color: ${background};
-  border-bottom: 1px solid #D0D0D0;
+  border-bottom: 1px solid #d0d0d0;
 `;
 
 export const LinksWrapper = styled(Column)`
@@ -40,7 +39,6 @@ export const LinksSubcontainer = styled(Row)`
   justify-content: start;
   gap: 23px;
   height: 100%;
-  width: 100%;
   padding: 0% ${innerPaddingHorizontal};
   padding-top: 7px;
 `;
@@ -55,8 +53,31 @@ export const Link = styled.a`
   }
 `;
 
-export const SubLinksContainer = styled.div`
+export const SubLinksContainer = styled(Column)`
+  align-items: initial;
   height: 115px;
   width: 100%;
   background-color: ${background};
+`;
+
+export const SubLinksWrapper = styled(Row)`
+  padding: 0% ${innerPaddingHorizontal};
+  margin-top: 22px;
+  align-items: center;
+  gap: 11px;
+`;
+
+export const Address = styled.p`
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 12px;
+`;
+
+export const SubLinksRightSide = styled(Row)`
+  margin-left: auto;
+  gap: ${(props) => props.gap || "27px"};
+`;
+
+export const HeaderLanguageSign = styled.p`
+  color: rgba(0, 0, 0, 54%);
+  font-size: 14px;
 `;
