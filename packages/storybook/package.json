@@ -7,7 +7,7 @@
   "main": "./lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vjbhang/workspace.git",
+    "url": "https://github.com/vjbhang/workspace/tree/master/packages/storybook",
     "directory": "packages/storybook"
   },
   "dependencies": {

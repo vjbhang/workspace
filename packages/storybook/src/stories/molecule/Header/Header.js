@@ -12,7 +12,7 @@ import { MdImage, MdMenu, MdLanguage } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 export const Header = ({ navigationLinks }) => {
-  let links = navigationLinks || ["About", "News", "Photo", "World"];
+  let links = navigationLinks || ["About", "News", "Photo", "Video"];
   const navBar = links.map((item) => {
     return (
       <Link to={"/" + item} style={{ textDecoration: "none" }}>
