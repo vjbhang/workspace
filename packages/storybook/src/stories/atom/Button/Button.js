@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 import "../../assets/index.css";
 
 export const Button = ({
@@ -22,13 +23,13 @@ export const Button = ({
       return (
         <Label style={labelStyle}>
           {icon}
-          {label || "Left"}
+          {label || "Button"}
         </Label>
       );
     } else if (right) {
       return (
         <Label style={labelStyle}>
-          {label || "Right"}
+          {label || "Button"}
           {icon}
         </Label>
       );
@@ -80,3 +81,47 @@ const Label = styled.div`
   align-items: center;
   gap: 0px 9px;
 `;
+
+Button.propTypes = {
+  /**
+   * The label of the button
+   */
+  label: PropTypes.string,
+  /**
+   * What background color to use
+   */
+  backgroundColor: PropTypes.string,
+  /**
+   * Icon placed on right side of label
+   */
+  right: PropTypes.bool,
+  /**
+   * Icon placed on left side of label
+   */
+  left: PropTypes.bool,
+  /**
+   * Receives a react element, ideally an icon element
+   * such as <Icon /> from a library such as
+   * react-native-vector-icons or react-icons
+   */
+  icon: PropTypes.element,
+  /**
+   * Show button without label and only icon
+   */
+  iconOnly: PropTypes.bool,
+  /**
+   * Optional inline styling for container
+   */
+  containerStyle: PropTypes.object,
+  /**
+   * Optional inline styling for label
+   */
+  labelStyle: PropTypes.object,
+};
+
+Button.defaultProps = {
+  label: "Button",
+  backgroundColor: "#64D0FF",
+  icon: null,
+  iconOnly: false,
+};
