@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 export function useTextInput({ type, containerStyle }) {
   const [value, setValue] = useState("");
