@@ -2045,10 +2045,10 @@
     "@typescript-eslint/types" "4.28.2"
     eslint-visitor-keys "^2.0.0"
 
-"@vjbhang/shared-components@^1.1.4":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@vjbhang/shared-components/-/shared-components-1.1.4.tgz#9161361f1f085f22b9bdab0e5200ace482831a2f"
-  integrity sha512-PllpVx5FG64G422XV0g1kEmggKyRn2qxlu7r61LlU520B4x7Rm/EtQDAaBFCHwk2yszGUQOfRX5XCWLvIzvcsA==
+"@vjbhang/shared-components@^1.1.5":
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@vjbhang/shared-components/-/shared-components-1.1.5.tgz#76c180c9a562c7a405dcce0be175d44ff243ee15"
+  integrity sha512-QC/smcxQaiWBmq4E39eouV9iAgeaA/cPPAOyhepF0tlzLMl+QtojEp6iGWu08moIa3xlEMBLolVYXrHn0+lugg==
   dependencies:
     "@babel/runtime" "^7.14.5"
     "@testing-library/jest-dom" "^5.11.4"
