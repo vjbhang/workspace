@@ -102,3 +102,43 @@ Header.propTypes = {
 Header.defaultProps = {
   user: null,
 };
+Header.__docgenInfo = {
+  description: "",
+  methods: [],
+  displayName: "Header",
+  props: {
+    user: {
+      defaultValue: {
+        value: "null",
+        computed: false,
+      },
+      type: {
+        name: "shape",
+        value: {},
+      },
+      required: false,
+      description: "",
+    },
+    onLogin: {
+      type: {
+        name: "func",
+      },
+      required: true,
+      description: "",
+    },
+    onLogout: {
+      type: {
+        name: "func",
+      },
+      required: true,
+      description: "",
+    },
+    onCreateAccount: {
+      type: {
+        name: "func",
+      },
+      required: true,
+      description: "",
+    },
+  },
+};

@@ -86,3 +86,8 @@ var Header = function Header(_ref) {
 };
 
 exports.Header = Header;
+Header.__docgenInfo = {
+  description: "",
+  methods: [],
+  displayName: "Header",
+};

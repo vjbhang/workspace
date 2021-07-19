@@ -22,13 +22,11 @@ function _typeof(obj) {
 Object.defineProperty(exports, "__esModule", {
   value: true,
 });
-exports.Input = void 0;
+exports.useTextInput = useTextInput;
 
 var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
-
-require("../../assets/index.css");
 
 var _templateObject;
 
@@ -157,27 +155,54 @@ function _arrayWithHoles(arr) {
   if (Array.isArray(arr)) return arr;
 }
 
-var Input = function Input(_ref) {
+function useTextInput(_ref) {
   var type = _ref.type,
-    style = _ref.style;
+    containerStyle = _ref.containerStyle;
 
   var _useState = (0, _react.useState)(""),
     _useState2 = _slicedToArray(_useState, 2),
     value = _useState2[0],
     setValue = _useState2[1];
 
-  return /*#__PURE__*/ _react.default.createElement(InputBar, {
-    style: style,
+  var input = /*#__PURE__*/ _react.default.createElement(InputBar, {
+    type: type || "text",
+    style: containerStyle,
     value: value,
     onChange: function onChange(e) {
       return setValue(e.target.value);
     },
-    type: type,
   });
-};
 
-exports.Input = Input;
+  return [value, input];
+}
 
 var InputBar = _styledComponents.default.input(
   _templateObject || (_templateObject = _taggedTemplateLiteral([""]))
 );
+
+useTextInput.propTypes = {
+  /**
+   * Enter JSX style object for container style
+   */
+  containerStyle: PropTypes.object,
+
+  /**
+   * Enter type of input
+   */
+  type: PropTypes.oneOf([
+    "email",
+    "month",
+    "number",
+    "password",
+    "reset",
+    "search",
+    "tel",
+    "text",
+    "time",
+    "url",
+    "week",
+  ]),
+};
+useTextInput.defaultProps = {
+  type: "text",
+};

@@ -9,6 +9,8 @@ var _react = _interopRequireDefault(require("react"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
 require("../../assets/index.css");
 
 var _templateObject, _templateObject2;
@@ -106,7 +108,7 @@ var Button = function Button(_ref) {
           style: labelStyle,
         },
         icon,
-        label || "Left"
+        label || "Button"
       );
     } else if (right) {
       return /*#__PURE__*/ _react.default.createElement(
@@ -114,7 +116,7 @@ var Button = function Button(_ref) {
         {
           style: labelStyle,
         },
-        label || "Right",
+        label || "Button",
         icon
       );
     } else {
@@ -164,3 +166,133 @@ var Label = _styledComponents.default.div(
       "\n  height: 100%;\n  widht: 100%;\n  flex-direction: row;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 0px 9px;\n",
     ]))
 );
+
+Button.propTypes = {
+  /**
+   * The label of the button
+   */
+  label: _propTypes.default.string,
+
+  /**
+   * What background color to use
+   */
+  backgroundColor: _propTypes.default.string,
+
+  /**
+   * Icon placed on right side of label
+   */
+  right: _propTypes.default.bool,
+
+  /**
+   * Icon placed on left side of label
+   */
+  left: _propTypes.default.bool,
+
+  /**
+   * Receives a react element, ideally an icon element
+   * such as <Icon /> from a library such as
+   * react-native-vector-icons or react-icons
+   */
+  icon: _propTypes.default.element,
+
+  /**
+   * Show button without label and only icon
+   */
+  iconOnly: _propTypes.default.bool,
+
+  /**
+   * Optional inline styling for container
+   */
+  containerStyle: _propTypes.default.object,
+
+  /**
+   * Optional inline styling for label
+   */
+  labelStyle: _propTypes.default.object,
+};
+Button.defaultProps = {
+  label: "Button",
+  backgroundColor: "#64D0FF",
+  icon: null,
+  iconOnly: false,
+};
+Button.__docgenInfo = {
+  description: "",
+  methods: [],
+  displayName: "Button",
+  props: {
+    label: {
+      defaultValue: {
+        value: '"Button"',
+        computed: false,
+      },
+      type: {
+        name: "string",
+      },
+      required: false,
+      description: "The label of the button",
+    },
+    backgroundColor: {
+      defaultValue: {
+        value: '"#64D0FF"',
+        computed: false,
+      },
+      type: {
+        name: "string",
+      },
+      required: false,
+      description: "What background color to use",
+    },
+    icon: {
+      defaultValue: {
+        value: "null",
+        computed: false,
+      },
+      type: {
+        name: "element",
+      },
+      required: false,
+      description:
+        "Receives a react element, ideally an icon element\nsuch as <Icon /> from a library such as\nreact-native-vector-icons or react-icons",
+    },
+    iconOnly: {
+      defaultValue: {
+        value: "false",
+        computed: false,
+      },
+      type: {
+        name: "bool",
+      },
+      required: false,
+      description: "Show button without label and only icon",
+    },
+    right: {
+      type: {
+        name: "bool",
+      },
+      required: false,
+      description: "Icon placed on right side of label",
+    },
+    left: {
+      type: {
+        name: "bool",
+      },
+      required: false,
+      description: "Icon placed on left side of label",
+    },
+    containerStyle: {
+      type: {
+        name: "object",
+      },
+      required: false,
+      description: "Optional inline styling for container",
+    },
+    labelStyle: {
+      type: {
+        name: "object",
+      },
+      required: false,
+      description: "Optional inline styling for label",
+    },
+  },
+};

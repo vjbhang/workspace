@@ -200,3 +200,8 @@ var Footer = function Footer() {
 };
 
 exports.Footer = Footer;
+Footer.__docgenInfo = {
+  description: "",
+  methods: [],
+  displayName: "Footer",
+};

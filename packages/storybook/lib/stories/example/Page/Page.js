@@ -157,3 +157,43 @@ Page.propTypes = {
 Page.defaultProps = {
   user: null,
 };
+Page.__docgenInfo = {
+  description: "",
+  methods: [],
+  displayName: "Page",
+  props: {
+    user: {
+      defaultValue: {
+        value: "null",
+        computed: false,
+      },
+      type: {
+        name: "shape",
+        value: {},
+      },
+      required: false,
+      description: "",
+    },
+    onLogin: {
+      type: {
+        name: "func",
+      },
+      required: true,
+      description: "",
+    },
+    onLogout: {
+      type: {
+        name: "func",
+      },
+      required: true,
+      description: "",
+    },
+    onCreateAccount: {
+      type: {
+        name: "func",
+      },
+      required: true,
+      description: "",
+    },
+  },
+};

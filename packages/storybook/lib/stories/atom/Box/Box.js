@@ -43,3 +43,9 @@ var Container = _styledComponents.default.div(
     return props.backgroundColor || "pink";
   }
 );
+
+Box.__docgenInfo = {
+  description: "",
+  methods: [],
+  displayName: "Box",
+};

@@ -3,11 +3,11 @@
 Object.defineProperty(exports, "__esModule", {
   value: true,
 });
-Object.defineProperty(exports, "Input", {
+Object.defineProperty(exports, "useTextInput", {
   enumerable: true,
   get: function get() {
-    return _Input.Input;
+    return _useTextInput.useTextInput;
   },
 });
 
-var _Input = require("./Input");
+var _useTextInput = require("./useTextInput");

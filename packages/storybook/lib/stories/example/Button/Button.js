@@ -129,3 +129,75 @@ Button.defaultProps = {
   size: "medium",
   onClick: undefined,
 };
+Button.__docgenInfo = {
+  description: "Primary UI component for user interaction",
+  methods: [],
+  displayName: "Button",
+  props: {
+    backgroundColor: {
+      defaultValue: {
+        value: "null",
+        computed: false,
+      },
+      type: {
+        name: "string",
+      },
+      required: false,
+      description: "What background color to use",
+    },
+    primary: {
+      defaultValue: {
+        value: "false",
+        computed: false,
+      },
+      type: {
+        name: "bool",
+      },
+      required: false,
+      description: "Is this the principal call to action on the page?",
+    },
+    size: {
+      defaultValue: {
+        value: '"medium"',
+        computed: false,
+      },
+      type: {
+        name: "enum",
+        value: [
+          {
+            value: '"small"',
+            computed: false,
+          },
+          {
+            value: '"medium"',
+            computed: false,
+          },
+          {
+            value: '"large"',
+            computed: false,
+          },
+        ],
+      },
+      required: false,
+      description: "How large should the button be?",
+    },
+    onClick: {
+      defaultValue: {
+        value: "undefined",
+        computed: true,
+      },
+      type: {
+        name: "func",
+      },
+      required: false,
+      description: "Optional click handler",
+    },
+    label: {
+      type: {
+        name: "string",
+      },
+      required: true,
+      description: "Button contents",
+    },
+  },
+};

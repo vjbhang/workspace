@@ -15,10 +15,10 @@ Object.defineProperty(exports, "Button", {
     return _Button.Button;
   },
 });
-Object.defineProperty(exports, "Input", {
+Object.defineProperty(exports, "useTextInput", {
   enumerable: true,
   get: function get() {
-    return _Input.Input;
+    return _Input.useTextInput;
   },
 });
 Object.defineProperty(exports, "Header", {
