@@ -1157,10 +1157,17 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.1", "@babel/runtime@^7.12.5", "@babel/runtime@^7.14.5", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
+"@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.1", "@babel/runtime@^7.12.5", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
   version "7.14.6"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.14.6.tgz"
   integrity sha512-/PCB2uJ7oM44tz8YhC4Z/6PeOKXp4K588f+5M3clr1M4zbqztlo0XEfJ2LEzj/FgwfgGcIdl8n7YYjTCI0BYwg==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
+"@babel/runtime@^7.14.5":
+  version "7.14.8"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.14.8.tgz#7119a56f421018852694290b9f9148097391b446"
+  integrity sha512-twj3L8Og5SaCRCErB4x4ajbvBIVV77CGeFglHpeg5WC5FF8TZzBWXtTJ4MqaD9QszLYTtr+IsaAL2rEUevb+eg==
   dependencies:
     regenerator-runtime "^0.13.4"
 
@@ -2045,15 +2052,16 @@
     "@typescript-eslint/types" "4.28.2"
     eslint-visitor-keys "^2.0.0"
 
-"@vjbhang/shared-components@^1.1.5":
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/@vjbhang/shared-components/-/shared-components-1.1.5.tgz#76c180c9a562c7a405dcce0be175d44ff243ee15"
-  integrity sha512-QC/smcxQaiWBmq4E39eouV9iAgeaA/cPPAOyhepF0tlzLMl+QtojEp6iGWu08moIa3xlEMBLolVYXrHn0+lugg==
+"@vjbhang/shared-components@^1.1.7":
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/@vjbhang/shared-components/-/shared-components-1.1.7.tgz#7ee9cc445cb292f5ea7f586b5397d72d778da711"
+  integrity sha512-bi0kaQw6t/SImlJOi/0MlMKSXVjPLuMGGnVH9qoHWGhEJBK66pkwmF9TqHstpBOtBsC+vdRVuuVNKzxJiY0ycQ==
   dependencies:
     "@babel/runtime" "^7.14.5"
     "@testing-library/jest-dom" "^5.11.4"
     "@testing-library/react" "^11.1.0"
     "@testing-library/user-event" "^12.1.10"
+    prop-types "^15.7.2"
     react "^17.0.2"
     react-dom "^17.0.2"
     react-icons "^4.2.0"
