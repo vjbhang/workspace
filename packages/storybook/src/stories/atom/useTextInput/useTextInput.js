@@ -20,10 +20,6 @@ const InputBar = styled.input``;
 
 useTextInput.propTypes = {
   /**
-   * Enter JSX style object for container style
-   */
-  containerStyle: PropTypes.object,
-  /**
    * Enter type of input
    */
   type: PropTypes.oneOf([
@@ -39,6 +35,10 @@ useTextInput.propTypes = {
     "url",
     "week",
   ]),
+  /**
+   * Enter JSX style object for container style
+   */
+  containerStyle: PropTypes.object,
 };
 
 useTextInput.defaultProps = {
