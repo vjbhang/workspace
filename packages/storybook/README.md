@@ -5,7 +5,7 @@ Component library using storybook in react designed with styled-components.
 **Publishing Instructions:**
 
 1. `npm run transpile-storybook`
-2. `npm version [major / minor / patch]` _(optional)_
+2. `npm version [major / minor / patch] -m <comment>` _(necessary to publish)_
 3. `npm publish`
 
 **Run Storybook**  

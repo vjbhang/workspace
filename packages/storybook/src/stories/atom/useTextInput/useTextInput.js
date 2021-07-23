@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 export function useTextInput({ type, containerStyle }) {
   const [value, setValue] = useState("");
@@ -19,10 +20,6 @@ const InputBar = styled.input``;
 
 useTextInput.propTypes = {
   /**
-   * Enter JSX style object for container style
-   */
-  containerStyle: PropTypes.object,
-  /**
    * Enter type of input
    */
   type: PropTypes.oneOf([
@@ -38,6 +35,10 @@ useTextInput.propTypes = {
     "url",
     "week",
   ]),
+  /**
+   * Enter JSX style object for container style
+   */
+  containerStyle: PropTypes.object,
 };
 
 useTextInput.defaultProps = {

@@ -4,8 +4,8 @@ import "../../assets/index.css";
 
 export const TextInput = ({ type, containerStyle }) => {
   // this is purely for storybook documentation.
-  // in actually usage in an app, the `useInput` hook is
-  // used. Below is an exact copy frmo `useTextInput` except for the return.
+  // in actually usage in an app, the `useTextInput` hook is
+  // used. Below is an exact copy from `useTextInput` except for the return.
   // Storybook preview and documentation won't show up properly
   // when I am calling a hook as the source component for *.stories.js
   const [value, setValue] = useState("");

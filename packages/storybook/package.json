@@ -1,10 +1,14 @@
 {
   "name": "@vjbhang/shared-components",
-  "version": "1.1.2",
+  "version": "1.1.6",
   "private": false,
   "author": "vjbhang",
   "description": "Custom React components!",
   "main": "./lib/index.js",
+  "files": [
+    "lib",
+    "README.MD"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/vjbhang/workspace/tree/master/packages/storybook",
@@ -15,6 +19,7 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
@@ -27,13 +32,9 @@
     "styled-components": "^5.3.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "transpile-storybook": "npx babel src --out-dir lib && cp -R src/stories/assets lib/stories"
+    "transpile-storybook": "rm -rf lib && npx babel src --out-dir lib && cp -R src/stories/assets lib/stories"
   },
   "eslintConfig": {
     "extends": [
