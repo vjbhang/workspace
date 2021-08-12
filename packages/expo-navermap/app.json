@@ -2,7 +2,7 @@
   "expo": {
     "name": "expo-navermap",
     "slug": "expo-navermap",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -15,13 +15,17 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.climb-co.allimb",
+      "buildNumber": "1.0.0"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.climb-co.allimb",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png"
