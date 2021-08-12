@@ -16,7 +16,7 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.climb-co.allimb",
+      "bundleIdentifier": "com.climbco.allimb",
       "buildNumber": "1.0.0"
     },
     "android": {
@@ -24,7 +24,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.climb-co.allimb",
+      "package": "com.climbco.allimb",
       "versionCode": 1
     },
     "web": {
