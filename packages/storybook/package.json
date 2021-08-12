@@ -2,7 +2,7 @@
   "name": "@vjbhang/shared-components",
   "version": "1.1.6",
   "private": false,
-  "author": "vjbhang",
+  "author": "vjbhang bhangjiwon@pm.me",
   "description": "Custom React components!",
   "main": "./lib/index.js",
   "files": [
