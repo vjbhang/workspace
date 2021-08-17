@@ -1,0 +1,52 @@
+<mxfile host="app.diagrams.net" modified="2021-08-17T01:38:58.380Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36" etag="KQJXGnHbmCx_WxyaNNWb" version="14.9.7" type="github">
+  <diagram id="kTP-c23ZlVuCpSEOFrGe" name="Page-1">
+    <mxGraphModel dx="1422" dy="804" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="jXKmYNsc6R3Pupq_ie4q-13" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=1 2;" parent="1" vertex="1">
+          <mxGeometry x="150" y="130" width="570" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="jXKmYNsc6R3Pupq_ie4q-8" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="170" y="205" width="300" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="jXKmYNsc6R3Pupq_ie4q-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" source="jXKmYNsc6R3Pupq_ie4q-1" target="jXKmYNsc6R3Pupq_ie4q-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jXKmYNsc6R3Pupq_ie4q-1" value="Naver Map API" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="190" y="220" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="jXKmYNsc6R3Pupq_ie4q-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=none;startFill=0;endArrow=blockThin;endFill=1;" parent="1" source="jXKmYNsc6R3Pupq_ie4q-2" target="jXKmYNsc6R3Pupq_ie4q-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jXKmYNsc6R3Pupq_ie4q-2" value="Interpret" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="470" y="440" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="jXKmYNsc6R3Pupq_ie4q-3" value="Display map data&amp;nbsp;&lt;br&gt;as overlay interface" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="575" y="220" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="jXKmYNsc6R3Pupq_ie4q-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;startArrow=none;startFill=0;" parent="1" source="jXKmYNsc6R3Pupq_ie4q-4" target="jXKmYNsc6R3Pupq_ie4q-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jXKmYNsc6R3Pupq_ie4q-4" value="Input gesture&lt;br&gt;outputs data" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
+          <mxGeometry x="330" y="220" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="jXKmYNsc6R3Pupq_ie4q-7" value="&lt;font style=&quot;font-size: 18px&quot;&gt;Web View&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="220" y="180" width="200" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="jXKmYNsc6R3Pupq_ie4q-9" value="&lt;font style=&quot;font-size: 18px&quot;&gt;Server&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="445" y="530" width="130" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="jXKmYNsc6R3Pupq_ie4q-11" value="&lt;span style=&quot;font-size: 18px&quot;&gt;react-native&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="575" y="180" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="jXKmYNsc6R3Pupq_ie4q-12" value="&lt;font style=&quot;font-size: 24px&quot;&gt;expo&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="360" y="90" width="130" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="jXKmYNsc6R3Pupq_ie4q-14" value="&lt;p style=&quot;line-height: 200%&quot;&gt;Data sent from Naver Map API is interpreted / relayed to react-native&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;dashed=1;dashPattern=1 2;" parent="1" vertex="1">
+          <mxGeometry x="575" y="440" width="145" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
