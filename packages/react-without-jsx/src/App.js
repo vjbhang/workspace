@@ -1,6 +1,17 @@
 import React from 'react';
 import './App.css';
 
+// key generator
+let guid = () => {
+  let s4 = () => {
+      return Math.floor((1 + Math.random()) * 0x10000)
+          .toString(16)
+          .substring(1);
+  }
+  //return id of format 'aaaaaaaa'-'aaaa'-'aaaa'-'aaaa'-'aaaaaaaaaaaa'
+  return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+}
+
 function App() {
   let ReactModel = new ReactObject();
 
@@ -14,7 +25,6 @@ function App() {
   return (
     <div>
       {ReactModel.jsx}
-      <h1>Earth goes to Mars</h1>
     </div>
   );
 }
@@ -32,6 +42,6 @@ ReactObject.prototype = {
   },
   addHeaderChild: function({title}) {
     console.log(title, this.jsx);
-    this.jsx = React.cloneElement(this.jsx, {children: [this.jsx, React.createElement('h1', null, title)]} );
+    this.jsx = React.cloneElement(this.jsx, {children: [this.jsx.props.children, React.createElement('h1', {key: guid()}, title)]} );
   },
 }
