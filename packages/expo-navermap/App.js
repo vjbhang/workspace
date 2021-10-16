@@ -42,8 +42,7 @@ export default function App() {
         </Text>
       </Header>
       <WebView
-        originWhitelist={["*"]}
-        source={{ html: map }}
+        source={{ uri: "http://192.168.0.11:3000/" }}
         style={styles.webview}
       />
       {/* <MapContainer>
