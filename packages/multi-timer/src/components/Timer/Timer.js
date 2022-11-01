@@ -2,7 +2,7 @@ import React, { useState, useEffect, memo } from "react";
 import styled from "styled-components";
 import { useTimer } from "react-timer-hook";
 
-export const Timer = memo(function Timer({ expiryTimestamp }) {
+function Timer({ expiryTimestamp, index }) {
   const {
     seconds,
     minutes,
@@ -18,6 +18,7 @@ export const Timer = memo(function Timer({ expiryTimestamp }) {
     onExpire: () => console.warn("onExpire called"),
   });
 
+  console.log("rendering?");
   return (
     <Container>
       <p>Timer Demo</p>
@@ -41,7 +42,9 @@ export const Timer = memo(function Timer({ expiryTimestamp }) {
       </button>
     </Container>
   );
-});
+}
+
+export default Timer = memo(Timer);
 
 const Container = styled.div`
   border-radius: 8px;

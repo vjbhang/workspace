@@ -1,2 +1,3 @@
-import { Timer } from "./Timer";
-export default Timer;
+import Timer from "./Timer";
+import TimerWrapper from "./TimerWrapper";
+export { TimerWrapper as Timer };
