@@ -36,4 +36,26 @@ router.get("/getTravelSummary", function (req, res, next) {
     });
 });
 
+router.get("/getMarkers", function (req, res, next) {
+  console.log("sending markers");
+  res.send([
+    {
+      latlng: { latitude: 37.51774616864996, longitude: 126.98588616412374 },
+      title: "페이커 클라이밍",
+    },
+    {
+      latlng: { latitude: 37.51295833668051, longitude: 126.9996873455241 },
+      title: "반포 클라이밍",
+    },
+    {
+      latlng: { latitude: 37.49123965404524, longitude: 126.99878669125415 },
+      title: "서리풀 클라아머즈",
+    },
+    {
+      latlng: { latitude: 37.51670856968423, longitude: 126.98363972604112},
+      title: "하나뱅크 클라이밍"
+    }
+  ]);
+});
+
 module.exports = router;
