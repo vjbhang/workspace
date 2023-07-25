@@ -4,7 +4,7 @@ var axios = require("axios");
 
 /* GET home page. */
 router.get("/hello", function (req, res, next) {
-  res.send("World");
+  setTimeout(() => {  res.send("World");}, 3000);
 });
 
 router.get("/getTravelSummary", function (req, res, next) {
