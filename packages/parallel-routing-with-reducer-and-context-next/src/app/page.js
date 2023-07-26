@@ -1,18 +1,24 @@
 "use client";
-
-import Image from "next/image";
-import styles from "./page.module.css";
-
-import AddTask from "./AddTask.js";
-import TaskList from "./TaskList.js";
-import { TasksProvider } from "./TasksContext.js";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { useLogin } from "@/context/LoginContext";
+import Login from "./@login/page";
 
 export default function Home() {
+  const router = useRouter();
+  const loginContext = useLogin();
+
+  useEffect(() => {
+    if (loginContext.login.authenticated) {
+      console.log("loginContext:", loginContext);
+      setTimeout(() => router.replace("/todo"), 2000);
+    }
+  }, [loginContext]);
+
   return (
-    <TasksProvider>
-      <h1>Day off in Kyoto</h1>
-      <AddTask />
-      <TaskList />
-    </TasksProvider>
+    <div>
+      <p>Parallel Routing with Reducer and Context with Next JS</p>
+      <Login />
+    </div>
   );
 }
