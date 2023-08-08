@@ -9,7 +9,7 @@ export default function middleware(request: NextRequest) {
     console.log("session-id:", request.cookies.get("session-id"));
   } else {
     if (!request.nextUrl.pathname.startsWith("/login")) {
-      return NextResponse.redirect(new URL("/login", request.url));
+      return NextResponse.redirect("/login");
     }
   }
 }
