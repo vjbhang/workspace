@@ -2,8 +2,9 @@ var createError = require("http-errors");
 var express = require("express");
 var cors = require("cors");
 var path = require("path");
-var cookieParser = require("cookie-parser");
 var logger = require("morgan");
+var session = require("express-session");
+const store = new session.MemoryStore();
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
@@ -17,9 +18,22 @@ app.set("view engine", "jade");
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+// app.use(cookieParser());
+app.use((req, res, next) => {
+  console.log(store);
+  next();
+});
+
 app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
+app.use(
+  session({
+    secret: "keyboard cat",
+    cookie:{ maxAge: 3000 },
+    saveUninitialized: false,
+    store
+  })
+);
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
