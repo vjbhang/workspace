@@ -1,6 +1,6 @@
 import { cookies } from "next/headers";
 import { StylesInterface } from "../typescript";
-import LogoutButton from "@/component/logout-button";
+import LogoutButton from "@/component/molecule/logout-button";
 
 export default function LoggedIn() {
   const cookieStore = cookies();

@@ -1,8 +1,8 @@
 "use client";
 
-import LoginButton from "@/component/login-button";
+import LoginButton from "@/component/molecule/login-button";
 import { useState, useEffect } from "react";
-import { StylesInterface } from "../typescript";
+import { StylesInterface } from "../../typescript";
 import { useRouter } from "next/navigation";
 
 export default function Inputs() {

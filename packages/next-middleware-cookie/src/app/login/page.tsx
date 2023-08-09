@@ -1,4 +1,4 @@
-import Inputs from "./Inputs";
+import Inputs from "./client/Inputs";
 import { StylesInterface } from "../typescript";
 
 export default function Login() {
