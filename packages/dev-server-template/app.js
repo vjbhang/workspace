@@ -8,6 +8,7 @@ const store = new session.MemoryStore();
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
+const nextMiddlewareRouter = require("./routes/nextMiddlewareCookie");
 
 var app = express();
 
@@ -29,13 +30,14 @@ app.use(cors());
 app.use(
   session({
     secret: "keyboard cat",
-    cookie:{ maxAge: 3000 },
+    cookie: { maxAge: 3000 },
     saveUninitialized: false,
-    store
+    store,
   })
 );
 
 app.use("/", indexRouter);
+app.use("/next-middleware-cookie", nextMiddlewareRouter);
 app.use("/users", usersRouter);
 
 // catch 404 and forward to error handler

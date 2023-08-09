@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var axios = require("axios");
+const session = require("express-session");
 
 const mockUser = {
   user: "bhangjiwon",
@@ -12,56 +13,6 @@ router.get("/hello", function (req, res, next) {
   setTimeout(() => {
     res.send("world");
   }, 1500);
-});
-
-router.post("/authenticate", function(req, res) {
-  console.log("-------------------")
-  const {sessionID} = req.body;
-  console.log("req.session in /authenticate:", req.sessionStore.sessions);
-  console.log("received session id:", sessionID);
-  console.log("sessionID:", req.sessionID);
-  console.log("session.authenticated:", req.session.authenticated);
-  if (sessionID === req.sessionID) res.status(200).json({msg: "Same session id"});
-  else res.status(200).json({msg: "Not authenticated", sessionID: req.sessionID});
-})
-
-router.post("/login", function (req, res) {
-  console.log(req.sessionID);
-  const {username, password} = req.body;
-  if (username && password) {
-    if (req.session.authenticated) {
-      res.json(req.session);
-    } else {
-      if (password === "123") {
-        req.session.authenticated = true;
-        req.session.user = {
-          username, password
-        };
-        res.json(req.session);
-      } else {
-        res.status(403).json({msg: "Bad Credentials"})
-      }
-    }
-  } else res.status(403).json({msg: "Bad Credentials"});
-  res.status(200);
-});
-
-router.get("/logout", function (req, res, next) {
-  // logout logic
-
-  // clear the user from the session object and save.
-  // this will ensure that re-using the old session id
-  // does not have a logged in user
-  req.session.user = null;
-  req.session.save(function (err) {
-    if (err) next(err);
-
-    // regenerate the session, which is good practice to help
-    // guard against forms of session fixation
-    req.session.regenerate(function (err) {
-      if (err) next(err);
-    });
-  });
 });
 
 router.get("/getTravelSummary", function (req, res, next) {
