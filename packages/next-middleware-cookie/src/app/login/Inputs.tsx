@@ -3,14 +3,13 @@
 import LoginButton from "@/component/login-button";
 import { useState, useEffect } from "react";
 import { StylesInterface } from "../typescript";
+import { useRouter } from "next/navigation";
 
 export default function Inputs() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const router = useRouter();
 
-  useEffect(() => {
-    console.log(username, password);
-  }, [username, password]);
   return (
     <div style={styles.input}>
       <input
@@ -23,7 +22,7 @@ export default function Inputs() {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       ></input>
-      <LoginButton username={username} password={password} />
+      <LoginButton username={username} password={password} router={router} />
     </div>
   );
 }

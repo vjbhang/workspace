@@ -1,4 +1,6 @@
 import { cookies } from "next/headers";
+import { StylesInterface } from "../typescript";
+import LogoutButton from "@/component/logout-button";
 
 export default function LoggedIn() {
   const cookieStore = cookies();
@@ -12,9 +14,19 @@ export default function LoggedIn() {
     ));
   }
   return (
-    <div>
+    <div style={styles.container}>
       <p>You are logged in.</p>
+      <LogoutButton />
       <CookieMap />
     </div>
   );
 }
+
+const styles: StylesInterface = {
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+};
