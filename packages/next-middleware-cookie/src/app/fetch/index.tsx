@@ -1,5 +1,4 @@
 import Cookies from "js-cookie";
-import { useRouter } from "next/router";
 
 export async function postLogin(username: string, password: string) {
   const body = {
