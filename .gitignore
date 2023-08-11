@@ -3,3 +3,5 @@ node_modules/
 
 # misc
 lerna-debug.log*
+
+.env*.local
