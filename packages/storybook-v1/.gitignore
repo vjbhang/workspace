@@ -36,6 +36,3 @@ next-env.d.ts
 
 build-storybook.log
 storybook-static
-
-# babel compiled
-lib
