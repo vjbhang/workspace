@@ -1,13 +1,15 @@
 {
   "name": "@vjbhang/storybook-v1",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "private": false,
   "author": "vjbhang",
   "description": "A component library utilizing storybook, inspired by Material UI and the likes.",
-  "main": "./lib",
+  "main": "lib/index",
+  "types": "lib/index",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vjbhang/workspace.git#master"
+    "url": "https://github.com/vjbhang/workspace/tree/master/packages/storybook-v1",
+    "directory": "packages/storybook"
   },
   "keywords": [
     "react",
