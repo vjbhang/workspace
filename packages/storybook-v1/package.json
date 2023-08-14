@@ -2,11 +2,10 @@
   "name": "storybook-v1",
   "version": "0.1.0",
   "private": true,
+  "author": "vjbhang",
+  "description": "A component library utilizing storybook, inspired by Material UI and the likes.",
+  "main": "./src/index.tsx",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "chromatic": "npx chromatic --project-token=chpt_17d42ad571a0be4"
