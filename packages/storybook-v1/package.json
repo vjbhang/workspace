@@ -1,10 +1,10 @@
 {
   "name": "@vjbhang/storybook-v1",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "private": false,
   "author": "vjbhang",
   "description": "A component library utilizing storybook, inspired by Material UI and the likes.",
-  "main": "src/index",
+  "main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/vjbhang/workspace/tree/master/packages/storybook-v1",
