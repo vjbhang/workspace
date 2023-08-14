@@ -1,14 +1,29 @@
 {
-  "name": "storybook-v1",
+  "name": "@vjbhang/storybook-v1",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "author": "vjbhang",
   "description": "A component library utilizing storybook, inspired by Material UI and the likes.",
-  "main": "./src/index.tsx",
+  "main": "./lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vjbhang/workspace.git#master"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "storybook"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vjbhang/workspace/issues"
+  },
+  "homepage": "https://github.com/vjbhang/workspace/tree/master#readme",
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=chpt_17d42ad571a0be4"
+    "chromatic": "npx chromatic --project-token=chpt_17d42ad571a0be4",
+    "build:babel": "rm -rf ./lib && npx babel --extensions .ts,.tsx ./src --out-dir lib"
   },
   "dependencies": {
     "@types/node": "20.4.9",
@@ -25,6 +40,11 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
+    "@babel/cli": "^7.22.10",
+    "@babel/core": "^7.22.10",
+    "@babel/preset-env": "^7.22.10",
+    "@babel/preset-react": "^7.22.5",
+    "@babel/preset-typescript": "^7.22.5",
     "@storybook/addon-essentials": "^7.2.2",
     "@storybook/addon-interactions": "^7.2.2",
     "@storybook/addon-links": "^7.2.2",
@@ -36,7 +56,5 @@
     "chromatic": "^6.21.0",
     "eslint-plugin-storybook": "^0.6.13",
     "storybook": "^7.2.2"
-  },
-  "readme": "ERROR: No README data found!",
-  "_id": "storybook-v1@0.1.0"
+  }
 }
