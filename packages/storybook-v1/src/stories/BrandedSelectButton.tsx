@@ -1,7 +1,7 @@
 import Image from "next/image";
 import chevron from "../../public/expand_more.svg";
 
-interface BrandedSelectButtonProps {
+type BrandedSelectButtonProps =  {
   options: string[];
   active: boolean;
   containerStyle?: React.CSSProperties;
