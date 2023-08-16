@@ -28,7 +28,6 @@ export const Inactive: Story = {
   },
 };
 
-
 export const ActiveCustomColor: Story = {
   args: {
     label: "Label",
