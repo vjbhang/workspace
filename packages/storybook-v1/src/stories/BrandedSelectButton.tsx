@@ -5,12 +5,14 @@ type BrandedSelectButtonProps = {
   options: string[];
   active: boolean;
   containerStyle?: React.CSSProperties;
+  dropdownStyle?: React.CSSProperties;
 };
 
 export const BrandedSelectButton = ({
   options,
   active,
   containerStyle,
+  dropdownStyle,
 }: BrandedSelectButtonProps) => {
   const mapOptions = options.map((item, index) => (
     <option value={item} key={index}>
@@ -24,6 +26,7 @@ export const BrandedSelectButton = ({
         <div
           style={{
             boxShadow: "0px 0px 4px 0px rgba(134, 134, 134, 0.25)",
+            ...dropdownStyle
           }}
           className="w-40 h-fit mt-2 rounded-md overflow-hidden"
         >
