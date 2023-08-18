@@ -24,7 +24,6 @@ export const BrandedSelectButton = ({
         <div
           style={{
             boxShadow: "0px 0px 4px 0px rgba(134, 134, 134, 0.25)",
-            ...containerStyle,
           }}
           className="w-40 h-fit mt-2 rounded-md overflow-hidden"
         >
