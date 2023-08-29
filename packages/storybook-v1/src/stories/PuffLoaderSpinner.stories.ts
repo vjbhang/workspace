@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import PuffLoaderSpinner from "./PuffLoaderSpinner";
+import { PuffLoaderSpinner } from "./PuffLoaderSpinner";
 
 const meta = {
   title: "atom/PuffLoaderSpinner",

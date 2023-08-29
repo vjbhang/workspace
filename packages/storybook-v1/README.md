@@ -7,3 +7,7 @@ A typescript storybook component library used with NextJS & TailwindCSS. Publish
 ```
 npm install @vjbhang/storybook-v1
 ```
+
+## no build required to export
+
+No build is required to export typescript components. Just make sure that the Next JS React project is configured. (`tailwind.config.ts` content, `tsconfig.json` include, `nextConfig` transpilePackages)

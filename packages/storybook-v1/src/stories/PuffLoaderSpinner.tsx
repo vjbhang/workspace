@@ -4,8 +4,6 @@ interface PuffLoaderSpinnerProps {
   isLoading: boolean;
 }
 
-export function PuffLoaderSpinner({
-  isLoading,
-}: PuffLoaderSpinnerProps) {
+export function PuffLoaderSpinner({ isLoading }: PuffLoaderSpinnerProps) {
   return <PuffLoader loading={isLoading} />;
 }

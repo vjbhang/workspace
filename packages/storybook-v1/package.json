@@ -1,6 +1,6 @@
 {
   "name": "@vjbhang/storybook-v1",
-  "version": "0.2.21",
+  "version": "0.2.22",
   "private": false,
   "author": "vjbhang",
   "description": "A component library utilizing storybook, inspired by Material UI and the likes.",
