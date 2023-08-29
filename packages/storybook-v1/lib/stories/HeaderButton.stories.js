@@ -15,13 +15,6 @@ const meta = {
 };
 var _default = meta;
 exports.default = _default;
-const Inactive = {
-  args: {
-    label: "Label",
-    selected: false
-  }
-};
-exports.Inactive = Inactive;
 const Active = {
   args: {
     label: "Label",
@@ -29,6 +22,13 @@ const Active = {
   }
 };
 exports.Active = Active;
+const Inactive = {
+  args: {
+    label: "Label",
+    selected: false
+  }
+};
+exports.Inactive = Inactive;
 const ActiveCustomColor = {
   args: {
     label: "Label",

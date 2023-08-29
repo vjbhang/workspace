@@ -17,7 +17,8 @@ const BrandedSelectButton = _ref => {
   let {
     options,
     active,
-    containerStyle
+    containerStyle,
+    dropdownStyle
   } = _ref;
   const mapOptions = options.map((item, index) => /*#__PURE__*/React.createElement("option", {
     value: item,
@@ -28,7 +29,7 @@ const BrandedSelectButton = _ref => {
       return /*#__PURE__*/React.createElement("div", {
         style: _objectSpread({
           boxShadow: "0px 0px 4px 0px rgba(134, 134, 134, 0.25)"
-        }, containerStyle),
+        }, dropdownStyle),
         className: "w-40 h-fit mt-2 rounded-md overflow-hidden"
       }, /*#__PURE__*/React.createElement("div", {
         className: "text-gray-50 text-left flex flex-col justify-center h-16 pl-3 pr-3 bg-gray-800"
