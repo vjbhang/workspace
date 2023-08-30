@@ -1,8 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 
 interface TextInputProps {
-  // value: string;
-  // setValue: Dispatch<SetStateAction<string>>;
+  setValue: Dispatch<SetStateAction<string>>;
   value?: string;
   error?: boolean;
   placeholder?: string;
@@ -14,12 +13,14 @@ export const TextInput = ({
   error,
   placeholder,
   inputStyle,
+  setValue,
 }: TextInputProps) => {
   if (error) {
     return (
       <div className="w-56">
         <input
           value={value}
+          onChange={(e) => setValue(e.target.value)}
           type="text"
           className="p-1 w-full rounded-md border focus:outline-none text-base border-red-600"
           style={inputStyle}
@@ -36,6 +37,7 @@ export const TextInput = ({
       <div>
         <input
           value={value}
+          onChange={(e) => setValue(e.target.value)}
           type="text"
           className="p-1 rounded-md border-gray-200 border focus:outline-none text-base"
           style={inputStyle}

@@ -15,9 +15,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {
-    value: "Hello World",
-  },
+  args: {},
 };
 
 export const WithPlaceholder = {
@@ -28,7 +26,6 @@ export const WithPlaceholder = {
 
 export const Error = {
   args: {
-    value: "Hello World",
     error: true,
   },
 };
