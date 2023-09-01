@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import Axis from "./Axis";
 
 export default function Axes({ scales, margins, svgDimensions }) {

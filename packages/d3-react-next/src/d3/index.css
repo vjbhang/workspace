@@ -1,0 +1,16 @@
+.domain {
+  border: 1px solid white;
+  height: 100%;
+}
+
+.tick {
+  color: skyblue;
+}
+
+.tick > line {
+  border: 1px solid green;
+}
+
+.tick > text {
+  color: burlywood;
+}
