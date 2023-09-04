@@ -21,20 +21,33 @@ interface GenerateChartProps {
     | d3.ScaleLinear<number, number, never>
     | d3.ScaleTime<number, number, never>;
   style: ChartStyle;
+  data: any[];
 }
 
 export default function generateChart({
   xAxis,
   yAxis,
   style,
+  data,
 }: Required<GenerateChartProps>): SVGSVGElement {
   const svg = d3
     .create("svg")
     .attr("width", style.width)
     .attr("height", style.height);
 
+  svg
+    .append("g")
+    .attr("fill", "steelblue")
+    .selectAll()
+    .data(data)
+    .join("rect")
+    // .attr("x", (d) => xAxis(d.name))
+    // .attr("y", (d) => yAxis(d.frequency))
+    // .attr("height", (d) => yAxis(0) - yAxis(d.frequency))
+    .attr("width", 30);
+
   // adding the x-axis
-  xAxis.range([style.marginLeft, style.width - style.marginRight]);
+  //   xAxis.range([style.marginLeft, style.width - style.marginRight])
   svg
     .append("g")
     .attr("transform", `translate(0, ${style.height - style.marginBottom})`)
@@ -53,5 +66,5 @@ export default function generateChart({
       g.selectAll(".tick text").attr("font-size", style.yAxisFontSize || 10)
     );
 
-  return svg.node();
+  return svg.node()!;
 }
