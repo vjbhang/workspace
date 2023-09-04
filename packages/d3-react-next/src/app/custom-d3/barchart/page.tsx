@@ -41,14 +41,14 @@ export default function CustomD3TakeTwoPage() {
     yAxisConfig: { domainKey: "frequency" },
   });
 
-  isTheChart = useD3({ svgNode: aChart });
+  isTheChart = useD3({ svgNode: aChart! });
 
   return (
     <div
       className="w-screen h-screen flex flex-col items-center"
       style={{ background: "#080920" }}
     >
-      <h1 className="text-2xl p-8 text-white">도표 그리기</h1>
+      <h1 className="text-2xl p-8 text-white">Barchart</h1>
       <div>{isTheChart}</div>
     </div>
   );

@@ -1,5 +1,4 @@
 import * as d3 from "d3";
-import { useState, useEffect } from "react";
 
 export interface ChartStyle {
   width: number;
