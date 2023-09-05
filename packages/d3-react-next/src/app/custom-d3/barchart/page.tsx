@@ -21,12 +21,12 @@ export default function CustomD3TakeTwoPage() {
     yAxisTickPadding: 14,
     yAxisFontSize: 12,
     yAxisFontColor: "#FFFFFF66",
+    background: "#080920",
   };
   const barStyle: BarStyle = {
     width: 80,
     paddingInner: 0.95,
     paddingOuter: 0.25,
-    background: "#080920",
   };
   let aChart, isTheChart;
 

@@ -13,21 +13,21 @@ export interface ChartStyle {
   xAxisFontColor?: string;
   yAxisFontSize?: number;
   yAxisFontColor?: string;
+  background?: string;
 }
 
 export interface BarStyle {
   width?: number;
   paddingInner?: number;
   paddingOuter?: number;
-  background?: string;
 }
 
-interface xAxisConfig {
+export interface xAxisConfig {
   domain: string[];
   domainKey: string;
 }
 
-interface yAxisConfig {
+export interface yAxisConfig {
   domainKey: string;
 }
 
@@ -78,7 +78,7 @@ export default function barchartGenerator({
       .append("rect")
       .attr("width", "100%")
       .attr("height", "100%")
-      .attr("fill", barStyle?.background || "white");
+      .attr("fill", chartStyle?.background || "white");
 
     // Add the y-axis and label, and remove the domain line.
     svg
@@ -87,7 +87,6 @@ export default function barchartGenerator({
       // .attr("transform", `translate(0,${chartStyle.height - chartStyle.marginBottom})`)
       .call(
         d3
-
           .axisRight(y)
           .tickFormat((y) => commaFormat((y * 1).toFixed()))
           .tickSize(
