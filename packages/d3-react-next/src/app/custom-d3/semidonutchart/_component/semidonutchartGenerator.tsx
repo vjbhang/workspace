@@ -4,19 +4,12 @@ import {
   ChartStyle,
   BarStyle,
 } from "../../barchart/_component/barchartGenerator";
-import "./donutchart.css";
+import "./semidonut.css";
 
-export interface DonutChartData {
-  name: string;
-  value: number;
-  percentage: number;
-}
-
-export interface DonutChartBarStyle extends BarStyle {
-  colorRange: string[];
-  arcSpacing: number;
-  arcWidthPercentageScale: number;
-}
+import {
+  DonutChartData,
+  DonutChartBarStyle,
+} from "../../donutchart/_component/donutchartGenerator";
 
 interface donutChartGeneratorProps {
   chartStyle: ChartStyle;
@@ -24,7 +17,7 @@ interface donutChartGeneratorProps {
   data: DonutChartData[];
 }
 
-export default function donutchartGenerator({
+export default function semidonutchartGenerator({
   chartStyle,
   barStyle,
   data,
@@ -47,8 +40,8 @@ export default function donutchartGenerator({
     const pie = d3
       .pie()
       .sort(null)
-      // .startAngle(Math.PI / 2)
-      // .endAngle(-Math.PI * 0.5)
+      .startAngle(Math.PI / 2)
+      .endAngle(-Math.PI * 0.5)
       .value(function (d) {
         return d.value;
       });
@@ -113,6 +106,7 @@ export default function donutchartGenerator({
     const text = g.select(".labels").selectAll("text").data(pie(data), key);
 
     function midAngle(d) {
+      console.log("midAngle:", d);
       return d.startAngle + (d.endAngle - d.startAngle) / 2;
     }
 
@@ -134,7 +128,9 @@ export default function donutchartGenerator({
         return function (t) {
           const d2 = interpolate(t);
           const pos = outerArc.centroid(d2);
-          pos[0] = radius * (midAngle(d2) < Math.PI ? 1 : -1);
+          pos[0] =
+            radius *
+            (midAngle(d2) < (Math.PI / 2 + -Math.PI * 0.5) / 2 ? 1 : -1); //place labels left or right
           return "translate(" + pos + ")";
         };
       })
@@ -144,73 +140,9 @@ export default function donutchartGenerator({
         this._current = interpolate(0);
         return function (t) {
           const d2 = interpolate(t);
-          return midAngle(d2) < Math.PI ? "start" : "end";
-        };
-      });
-
-    text
-      .enter()
-      .append("text")
-      .attr("dy", ".35em")
-      .attr("y", "20px")
-      .attr("fill", "white")
-      .text(function (d) {
-        return d.data.value + "명";
-      })
-      .merge(text)
-      .transition()
-      .duration(1000)
-      .attrTween("transform", function (d) {
-        this._current = this._current || d;
-        const interpolate = d3.interpolate(this._current, d);
-        this._current = interpolate(0);
-        return function (t) {
-          const d2 = interpolate(t);
-          const pos = outerArc.centroid(d2);
-          pos[0] = radius * (midAngle(d2) < Math.PI ? 1 : -1);
-          return "translate(" + pos + ")";
-        };
-      })
-      .styleTween("text-anchor", function (d) {
-        this._current = this._current || d;
-        const interpolate = d3.interpolate(this._current, d);
-        this._current = interpolate(0);
-        return function (t) {
-          const d2 = interpolate(t);
-          return midAngle(d2) < Math.PI ? "start" : "end";
-        };
-      });
-
-    text
-      .enter()
-      .append("text")
-      .attr("dy", ".35em")
-      .attr("y", "40px")
-      .attr("fill", "white")
-      .text(function (d) {
-        return d.data.percentage + "%";
-      })
-      .merge(text)
-      .transition()
-      .duration(1000)
-      .attrTween("transform", function (d) {
-        this._current = this._current || d;
-        const interpolate = d3.interpolate(this._current, d);
-        this._current = interpolate(0);
-        return function (t) {
-          const d2 = interpolate(t);
-          const pos = outerArc.centroid(d2);
-          pos[0] = radius * (midAngle(d2) < Math.PI ? 1 : -1);
-          return "translate(" + pos + ")";
-        };
-      })
-      .styleTween("text-anchor", function (d) {
-        this._current = this._current || d;
-        const interpolate = d3.interpolate(this._current, d);
-        this._current = interpolate(0);
-        return function (t) {
-          const d2 = interpolate(t);
-          return midAngle(d2) < Math.PI ? "start" : "end";
+          return midAngle(d2) < (Math.PI / 2 + -Math.PI * 0.5) / 2
+            ? "start"
+            : "end";
         };
       });
 
@@ -234,7 +166,10 @@ export default function donutchartGenerator({
         return function (t) {
           const d2 = interpolate(t);
           const pos = outerArc.centroid(d2);
-          pos[0] = radius * 0.95 * (midAngle(d2) < Math.PI ? 1 : -1);
+          pos[0] =
+            radius *
+            0.95 *
+            (midAngle(d2) > (Math.PI / 2 + -Math.PI * 0.5) / 2 ? 1 : -1);
           return [arc.centroid(d2), outerArc.centroid(d2), pos];
         };
       });
