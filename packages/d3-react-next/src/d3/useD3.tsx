@@ -12,5 +12,5 @@ export default function useD3({ svgNode }: { svgNode: SVGSVGElement }) {
     }
   }, []);
 
-  return <div ref={svgRef} />;
+  return <div className="w-full h-full" ref={svgRef} />;
 }
