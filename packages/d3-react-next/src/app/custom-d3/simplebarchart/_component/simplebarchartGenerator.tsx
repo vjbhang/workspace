@@ -1,38 +1,13 @@
 import * as d3 from "d3";
+import {
+  ChartStyle,
+  BarStyle,
+  xAxisConfig,
+  yAxisConfig,
+} from "../../barchart/_component/barchartGenerator";
+import Bars from "@/app/barchart/_components/Bars";
 
-export interface ChartStyle {
-  width: number;
-  height: number;
-  marginTop: number;
-  marginBottom: number;
-  marginLeft: number;
-  marginRight: number;
-  xAxisTickPadding?: number;
-  yAxisTickPadding?: number;
-  xAxisFontSize?: number;
-  xAxisFontColor?: string;
-  yAxisFontSize?: number;
-  yAxisFontColor?: string;
-  background?: string;
-}
-
-export interface BarStyle {
-  width?: number;
-  paddingInner?: number;
-  paddingOuter?: number;
-  colors?: string[];
-}
-
-export interface xAxisConfig {
-  domain: string[];
-  domainKey: string;
-}
-
-export interface yAxisConfig {
-  domainKey: string;
-}
-
-interface ChartGeneratorProps {
+interface SimpleBarChartGeneratorProps {
   xAxisConfig: xAxisConfig;
   yAxisConfig: yAxisConfig;
   barStyle?: BarStyle;
@@ -40,13 +15,13 @@ interface ChartGeneratorProps {
   data: any;
 }
 
-export default function barchartGenerator({
+export default function simplebarchartGenerator({
   xAxisConfig,
   yAxisConfig,
   barStyle,
   chartStyle,
   data,
-}: ChartGeneratorProps) {
+}: SimpleBarChartGeneratorProps) {
   // declare the x (vertical position) scale.
   if (typeof window !== "undefined") {
     const commaFormat = d3.format(",");
@@ -67,6 +42,12 @@ export default function barchartGenerator({
         chartStyle.marginTop,
       ]);
 
+    const colorScheme = d3
+      .scaleOrdinal()
+      .domain(xAxisConfig.domain)
+      .range(barStyle?.colors || ["red", "green", "blue"])
+      .unknown("#ccc");
+
     const svg = d3
       .create("svg")
       .attr("width", chartStyle.width)
@@ -86,19 +67,19 @@ export default function barchartGenerator({
       .append("g")
       .attr("transform", `translate(${chartStyle.marginLeft},0)`)
       // .attr("transform", `translate(0,${chartStyle.height - chartStyle.marginBottom})`)
-      .call(
-        d3
-          .axisRight(y)
-          .tickFormat((y) => commaFormat((y * 1).toFixed()))
-          .tickSize(
-            chartStyle.width - chartStyle.marginLeft - chartStyle.marginRight
-          )
-      )
+      //   .call(
+      //     d3
+      //       .axisRight(y)
+      //       .tickFormat((y) => commaFormat((y * 1).toFixed()))
+      //       .tickSize(
+      //         chartStyle.width - chartStyle.marginLeft - chartStyle.marginRight
+      //       )
+      //   )
       .call((g) => g.select(".domain").remove())
       .call((g) =>
         g
           .selectAll(".tick line")
-          .attr("stroke-opacity", 0.1)
+          .attr("stroke-opacity", 0)
           .attr("color", "white")
       )
       .call((g) =>
@@ -113,17 +94,60 @@ export default function barchartGenerator({
       .append("g")
       .attr("width", chartStyle.width)
       .attr("height", chartStyle.height);
+
+    /* ------- BARS ------- */
+
+    const arc = (r, sign) =>
+      r
+        ? `a${r * sign[0]},${r * sign[1]} 0 0 1 ${r * sign[2]},${r * sign[3]}`
+        : "";
+
+    const roundedRect = (x, y, width, height, r) => {
+      r = [
+        Math.min(r[0], height, width),
+        Math.min(r[1], height, width),
+        Math.min(r[2], height, width),
+        Math.min(r[3], height, width),
+      ];
+
+      return `M${x + r[0]},${y}h${width - r[0] - r[1]}${arc(
+        r[1],
+        [1, 1, 1, 1]
+      )}v${height - r[1] - r[2]}${arc(r[2], [1, 1, -1, 1])}h${
+        -width + r[2] + r[3]
+      }${arc(r[3], [1, 1, -1, -1])}v${-height + r[3] + r[0]}${arc(
+        r[0],
+        [1, 1, 1, -1]
+      )}z`;
+    };
+
+    // svg
+    //   .append("g")
+    //   .selectAll()
+    //   .data(data)
+    //   .join("rect")
+    //   .attr("fill", (d) => colorScheme(d.name))
+    //   .attr("x", (d) => x(d[xAxisConfig.domainKey]))
+    //   .attr("y", (d) => y(d[yAxisConfig.domainKey]))
+    //   .attr("height", (d) => y(0) - y(d[yAxisConfig.domainKey]))
+    //   .attr("width", x.bandwidth());
+
     svg
       .append("g")
-      .attr("fill", "steelblue")
-      .selectAll()
+      .selectAll("path")
       .data(data)
-      .join("rect")
-      .attr("fill", "#66B6FF")
-      .attr("x", (d) => x(d[xAxisConfig.domainKey]))
-      .attr("y", (d) => y(d[yAxisConfig.domainKey]))
-      .attr("height", (d) => y(0) - y(d[yAxisConfig.domainKey]))
-      .attr("width", x.bandwidth());
+      .enter()
+      .append("path")
+      .attr("fill", (d) => colorScheme(d[xAxisConfig.domainKey]))
+      .attr("d", (d) =>
+        roundedRect(
+          x(d[xAxisConfig.domainKey]),
+          y(d[yAxisConfig.domainKey]),
+          x.bandwidth(),
+          y(0) - y(d[yAxisConfig.domainKey]),
+          [10, 10, 0, 0]
+        )
+      );
 
     svg
       .append("g")
