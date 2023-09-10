@@ -14,17 +14,17 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Inactive: Story = {
-  args: {
-    label: "Label",
-    selected: false,
-  },
-};
-
 export const Active: Story = {
   args: {
     label: "Label",
     selected: true,
+  },
+};
+
+export const Inactive: Story = {
+  args: {
+    label: "Label",
+    selected: false,
   },
 };
 

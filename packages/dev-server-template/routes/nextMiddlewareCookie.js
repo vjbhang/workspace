@@ -21,6 +21,7 @@ router.post("/authenticate", function (req, res) {
       sessionID: req.sessionID,
       msg: "Same session id",
       isAuthenticated: true,
+      account: "bhangjiwon",
     });
   else
     res.status(200).json({
@@ -32,9 +33,11 @@ router.post("/authenticate", function (req, res) {
 
 router.post("/login", function (req, res) {
   console.log(req.sessionID);
+  console.log("body:", req.body);
   const { username, password } = req.body;
   if (username && password) {
     if (req.session.isAuthenticated) {
+      console.log("exists!");
       res.json({
         sessionID: req.sessionID,
         msg: "authenticated",
@@ -42,6 +45,7 @@ router.post("/login", function (req, res) {
       });
     } else {
       if (username === "bhangjiwon" && password === "123") {
+        console.log("exists!");
         req.session.isAuthenticated = true;
         req.session.user = {
           username,

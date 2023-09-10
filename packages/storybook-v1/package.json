@@ -1,14 +1,14 @@
 {
   "name": "@vjbhang/storybook-v1",
-  "version": "0.2.8",
+  "version": "0.2.25",
   "private": false,
   "author": "vjbhang",
   "description": "A component library utilizing storybook, inspired by Material UI and the likes.",
-  "main": "src/index.js",
+  "main": "src/index.tsx",
   "repository": {
     "type": "git",
     "url": "https://github.com/vjbhang/workspace/tree/master/packages/storybook-v1",
-    "directory": "packages/storybook"
+    "directory": "packages/storybook-v1"
   },
   "keywords": [
     "react",
@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/vjbhang/workspace/issues"
   },
-  "homepage": "https://github.com/vjbhang/workspace/tree/master#readme",
+  "homepage": "https://github.com/vjbhang/workspace/tree/master/packages/storybook-v1#readme",
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
@@ -27,6 +27,7 @@
     "build:babel": "rm -rf ./lib && npx babel --extensions .ts,.tsx ./src --out-dir lib"
   },
   "dependencies": {
+    "@lottiefiles/react-lottie-player": "^3.5.3",
     "@types/node": "20.4.9",
     "@types/react": "18.2.20",
     "@types/react-dom": "18.2.7",
@@ -37,6 +38,8 @@
     "postcss": "8.4.27",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-select": "^5.7.4",
+    "react-spinners": "^0.13.8",
     "tailwindcss": "3.3.3",
     "typescript": "5.1.6"
   },

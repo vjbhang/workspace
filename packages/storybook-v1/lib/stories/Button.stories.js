@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = exports.XLarge = exports.Small = exports.Medium = exports.Large = exports.CustomizedButton = void 0;
+exports.default = exports.XLarge = exports.Small = exports.Medium = exports.Large = exports.CustomizedButton = exports.Base = void 0;
 var _Button = require("./Button");
 const meta = {
   title: "atom/Button",
@@ -33,6 +33,13 @@ const Medium = {
   }
 };
 exports.Medium = Medium;
+const Base = {
+  args: {
+    size: "base",
+    label: "Button"
+  }
+};
+exports.Base = Base;
 const Large = {
   args: {
     size: "large",

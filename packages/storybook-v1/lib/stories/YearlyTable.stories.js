@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = exports.Default = void 0;
+exports.default = exports.Wide = exports.Default = void 0;
 var _YearlyTable = require("./YearlyTable");
 const meta = {
   title: "atom/YearlyTable",
@@ -15,5 +15,21 @@ const meta = {
 };
 var _default = meta;
 exports.default = _default;
-const Default = {};
+const Default = {
+  args: {
+    postureData: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    romData: [20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42]
+  }
+};
 exports.Default = Default;
+const Wide = {
+  args: {
+    postureData: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    romData: [20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42],
+    tableStyle: {
+      width: "80vw",
+      height: "25vw"
+    }
+  }
+};
+exports.Wide = Wide;
