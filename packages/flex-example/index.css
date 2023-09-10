@@ -1,0 +1,20 @@
+#container {
+  height: 100%;
+  width: 100%;
+  background-color: pink;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.item {
+  display: flex;
+  flex: 0.5;
+  background-color: green;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
