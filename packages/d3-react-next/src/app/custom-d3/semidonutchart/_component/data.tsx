@@ -2,7 +2,7 @@ import { DonutChartData } from "../../donutchart/_component/donutchartGenerator"
 
 export const fakeSemidonutChartData: DonutChartData[] = [
   {
-    name: "200대",
+    name: "20대",
     value: 2000,
     percentage: 20,
   },

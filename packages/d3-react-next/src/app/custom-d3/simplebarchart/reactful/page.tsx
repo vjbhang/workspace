@@ -10,6 +10,7 @@ export default function ReactfulPage() {
   const chartStyle: ChartStyle = {
     width: 1000,
     height: 600,
+    viewBoxHeight: 300,
     marginTop: 20,
     marginBottom: 40,
     marginRight: 20,
@@ -54,11 +55,17 @@ export default function ReactfulPage() {
   const [theChart, setTheChart] = useState<any>(null);
   const [isModalOpen, setModalOpen] = useState(false);
 
-  function Modal({ isOpen, theChart }: { isOpen: boolean, theChart:JSX.Element }) {
+  function Modal({
+    isOpen,
+    theChart,
+  }: {
+    isOpen: boolean;
+    theChart: JSX.Element;
+  }) {
     if (isOpen) {
       return (
         <div className="absolute top-0 left-0 w-screen h-screen flex justify-center items-center bg-black bg-opacity-90 flex-col">
-          {theChart}
+          <div className="w-1/3">{theChart}</div>
           <button
             className="bg-white border rounded p-2 border-black"
             onClick={() => setModalOpen(!isModalOpen)}
@@ -87,15 +94,19 @@ export default function ReactfulPage() {
   }, []);
 
   return (
-    <div className="bg-black">
-      <button
-        className="border rounded border-white p-2 text-white"
-        onClick={() => setModalOpen(!isModalOpen)}
-      >
-        Open
-      </button>
+    <div className="w-screen h-screen bg-black flex flex-col gap-4">
       <Modal isOpen={isModalOpen} theChart={theChart} />
-      <TheChart />
+      <div className="flex flex-col items-center justify-center">
+        <button
+          className="border rounded border-white p-2 text-white"
+          onClick={() => setModalOpen(!isModalOpen)}
+        >
+          Open
+        </button>
+        <div className="w-full h-full">
+          <TheChart />
+        </div>
+      </div>
     </div>
   );
 }

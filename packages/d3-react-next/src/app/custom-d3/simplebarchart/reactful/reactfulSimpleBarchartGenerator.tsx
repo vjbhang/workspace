@@ -56,14 +56,25 @@ export default function SimpleBarChart({
         .call(d3.axisBottom(x).tickSizeOuter(0), [gx, x])
         .call((g) => g.select(".domain").remove())
         .call((g) => g.selectAll(".tick line").attr("stroke-opacity", 0))
-        .call((g) => g.selectAll(".tick text").attr("color", chartStyle.xAxisFontColor || "black").attr("x", 0).attr("dy", 12).attr("font-size", chartStyle?.xAxisFontSize || 10))
+        .call((g) =>
+          g
+            .selectAll(".tick text")
+            .attr("color", chartStyle.xAxisFontColor || "black")
+            .attr("x", 0)
+            .attr("dy", 12)
+            .attr("font-size", chartStyle?.xAxisFontSize || 10)
+        )
   );
 
   console.log("data:", data);
 
   function Chart() {
     return (
-      <svg width={chartStyle.width} height={chartStyle.height}>
+      <svg
+        width="100%"
+        height={chartStyle.viewBoxHeight}
+        viewBox={`0 0 ${chartStyle.width} ${chartStyle.height}`}
+      >
         <g transform={`translate(${chartStyle.marginLeft}, 0)`}></g>
         <g>
           {data.map((item) => (
